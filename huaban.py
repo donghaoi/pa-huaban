@@ -58,7 +58,6 @@ class HuaBan(object):
                 b += 1
                 xiazai = requests.get(url=i, headers=self.headers,timeout=15,verify=False)
                 img_name = str(img_urls[0]).split("/")[-1].replace("webp", ".webp", 1).replace("fw480","_fw480" + str(b))
-                print(img_name)
                 with open("图片爬取存储位置/" + img_name ,"wb") as a:
                     a.write(xiazai.content)
                     print("第" + str(b) + "张图片下载完成")
